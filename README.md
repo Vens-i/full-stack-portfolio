@@ -1,36 +1,79 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Full Stack Developer Portfolio
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features a clean design, dark mode support, and smooth animations.
 
-First, run the development server:
+![Portfolio Preview](public/preview.png)
 
+## 🌟 Features
+
+- **Responsive Design**: Looks great on all devices
+- **Dark/Light Mode**: Automatic theme detection with manual toggle
+- **Smooth Animations**: Using Framer Motion for engaging interactions
+- **Modern Tech Stack**: Built with Next.js 14, TypeScript, and Tailwind CSS
+- **Interactive UI Components**: Custom-built components using shadcn/ui
+- **Optimized Performance**: Fast loading times and smooth navigation
+- **Clean Architecture**: Well-organized component structure
+- **Contact Form**: Easy-to-use contact form with email integration
+
+## 🚀 Key Sections
+
+- **Hero**: Introduction and call-to-action
+- **Services**: Showcase of professional services
+- **Projects**: Portfolio of recent work
+- **Skills**: Interactive display of technical expertise
+- **Experience**: Professional background and achievements
+- **Contact**: Multiple ways to get in touch
+
+## 💻 Tech Stack
+
+- **Framework**: Next.js 14 with App Router
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Animations**: Framer Motion
+- **Icons**: Lucide Icons
+- **Fonts**: Next/Font with Inter
+- **Deployment**: Vercel
+
+## 🛠️ Getting Started
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/ksauguste/full-stack-portfolio.git
+cd full-stack-portfolio
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) to view the site
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+├── app/                # Next.js app directory
+├── components/         # React components
+│   ├── ui/            # Reusable UI components
+│   └── ...            # Feature components
+├── hooks/             # Custom React hooks
+├── lib/               # Utility functions
+└── public/            # Static assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔧 Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Personal Information**: Update content in component files
+2. **Theme**: Modify `tailwind.config.ts` for theme customization
+3. **Components**: Customize UI components in `components/ui/`
+4. **Styling**: Adjust global styles in `app/globals.css`
 
-## Deploy on Vercel
+## 📝 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is open source and available under the [MIT License](LICENSE).
