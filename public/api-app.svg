@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="300" viewBox="0 0 500 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="500" height="300" fill="#1e293b"/>
+  <path d="M150 150H350M150 150V220M150 150V80M350 150V220M350 150V80M150 220H350" stroke="#38bdf8" stroke-width="8" stroke-linecap="round"/>
+  <rect x="200" y="120" width="100" height="60" rx="4" fill="#38bdf8" fill-opacity="0.3"/>
+  <path d="M220 140H280M220 160H260" stroke="#38bdf8" stroke-width="4" stroke-linecap="round"/>
+</svg>
