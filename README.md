@@ -1,79 +1,86 @@
-# Full Stack Developer Portfolio
+# Kervens Auguste · Personal Website
 
-A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS. Features a clean design, dark mode support, and smooth animations.
+A calm, human-focused personal site for Kervens Auguste, built with the Next.js App Router and a bespoke earth-tone design system. The experience leans on strong typography, generous white space, and subtle motion to introduce Kervens’ story, values, and contact paths.
 
-![Portfolio Preview](public/preview.png)
+![Preview](public/preview.png)
 
-## 🌟 Features
+## ✨ Highlights
 
-- **Responsive Design**: Looks great on all devices
-- **Dark/Light Mode**: Automatic theme detection with manual toggle
-- **Smooth Animations**: Using Framer Motion for engaging interactions
-- **Modern Tech Stack**: Built with Next.js 14, TypeScript, and Tailwind CSS
-- **Interactive UI Components**: Custom-built components using shadcn/ui
-- **Optimized Performance**: Fast loading times and smooth navigation
-- **Clean Architecture**: Well-organized component structure
-- **Contact Form**: Easy-to-use contact form with email integration
+- Minimal, “digital handshake” layout with warm earth-tone palette
+- Semantic App Router pages for Home, About (with integrated experience timeline), Values, and Contact
+- Reusable site shell with animated route transitions and responsive navigation
+- Client-side contact form with validation, loading states, and spam protection (honeypot, time-on-page, rate limit)
+- Server-side mailer using Nodemailer + Gmail SMTP via app password
 
-## 🚀 Key Sections
+## 🧱 Tech Stack
 
-- **Hero**: Introduction and call-to-action
-- **Services**: Showcase of professional services
-- **Projects**: Portfolio of recent work
-- **Skills**: Interactive display of technical expertise
-- **Experience**: Professional background and achievements
-- **Contact**: Multiple ways to get in touch
-
-## 💻 Tech Stack
-
-- **Framework**: Next.js 14 with App Router
+- **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui
-- **Animations**: Framer Motion
-- **Icons**: Lucide Icons
-- **Fonts**: Next/Font with Inter
-- **Deployment**: Vercel
+- **Styling**: CSS Modules + custom global theme
+- **Font**: Inter via `next/font`
+- **Motion**: Framer Motion
+- **Email**: Nodemailer with Gmail SMTP (free tier)
 
-## 🛠️ Getting Started
+## 🚀 Getting Started
 
-1. Clone the repository:
 ```bash
-git clone https://github.com/ksauguste/full-stack-portfolio.git
+git clone https://github.com/vens-i/full-stack-portfolio.git
 cd full-stack-portfolio
-```
-
-2. Install dependencies:
-```bash
 npm install
 ```
 
-3. Run the development server:
+### Environment
+
+Create `.env.local` at the project root:
+
+```
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=465
+SMTP_USER=ksauguste@gmail.com
+SMTP_PASS=<gmail app password>
+CONTACT_TO=ksauguste@gmail.com
+```
+
+> Generate an App Password inside your Google account (Security → App passwords) and paste it into `SMTP_PASS`. Never use your regular Gmail password.
+
+### Develop
+
 ```bash
 npm run dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) to view the site
+Visit <http://localhost:3000>.
 
-## 📁 Project Structure
+## 📂 Key Structure
 
 ```
-├── app/                # Next.js app directory
-├── components/         # React components
-│   ├── ui/            # Reusable UI components
-│   └── ...            # Feature components
-├── hooks/             # Custom React hooks
-├── lib/               # Utility functions
-└── public/            # Static assets
+app/
+  api/contact/route.ts   # Email endpoint with validation & rate limiting
+  about/                 # About page + embedded experience timeline
+  experience/            # Standalone experience view using shared data
+  values/                # Manifesto-style values page
+  contact/               # Contact screen housing the form
+components/
+  SiteLayout.tsx         # Shell, navigation, transitions
+  Experience.tsx         # Reusable experience timeline
+  ContactForm.tsx        # Client-side form logic
 ```
 
-## 🔧 Customization
+## 🔒 Spam & Delivery Safeguards
 
-1. **Personal Information**: Update content in component files
-2. **Theme**: Modify `tailwind.config.ts` for theme customization
-3. **Components**: Customize UI components in `components/ui/`
-4. **Styling**: Adjust global styles in `app/globals.css`
+- Honeypot `company` field to deter bots
+- Hidden `startedAt` timestamp; submissions require >3 seconds on page
+- Per-IP 60s rate limiter in API route (in-memory)
+- Input sanitation and length limits before emailing
+- Credentials only read server-side via environment variables
 
-## 📝 License
+## 🧩 Customization Notes
 
-This project is open source and available under the [MIT License](LICENSE).
+- Update copy inside page components (`app/*/page.tsx`)
+- Adjust colors, radii, and shadows in `app/globals.css`
+- Extend navigation or page transitions via `components/SiteLayout.tsx`
+- Swap placeholder portrait on the About page for a real image
+
+## 📜 License
+
+MIT © Kervens Auguste
