@@ -1,0 +1,60 @@
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 260px);
+  gap: clamp(1.5rem, 5vw, 3rem);
+  align-items: start;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: var(--muted);
+}
+
+.copy h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.copy p {
+  margin: 0;
+}
+
+.portraitCard {
+  border-radius: var(--radius);
+  padding: 1rem 1rem 1.5rem;
+  background: linear-gradient(160deg, rgba(185, 122, 74, 0.2), rgba(255, 255, 255, 0.82));
+  box-shadow: inset 0 0 0 1px rgba(185, 122, 74, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.portrait {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: calc(var(--radius) - 6px);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.85), rgba(185, 122, 74, 0.42));
+  box-shadow: 0 14px 35px -24px rgba(90, 58, 39, 0.55);
+}
+
+.portraitCaption {
+  font-size: 0.92rem;
+  color: rgba(47, 31, 22, 0.58);
+  line-height: 1.4;
+}
+
+@media (max-width: 720px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .portraitCard {
+    max-width: 280px;
+  }
+}
