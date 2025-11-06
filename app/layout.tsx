@@ -1,28 +1,46 @@
-import type React from "react"
 import "@/app/globals.css"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
+import type { ReactNode } from "react"
 
-const inter = Inter({ subsets: ["latin"] })
+import SiteLayout from "@/components/SiteLayout"
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "Kervens Auguste | Full Stack Developer",
+  title: "Kervens Auguste — Full Stack Web Developer",
   description:
-    "Portfolio of Kervens Auguste, a Full Stack Web Developer specializing in building modern web applications with a focus on user experience and performance.",
+    "Kervens Auguste partners with teams and small businesses to build dependable, people-first digital tools and experiences.",
+  keywords: [
+    "Kervens Auguste",
+    "Full Stack Web Developer",
+    "New York",
+    "web development",
+    "software developer",
+    "people-first design",
+    "healthcare technology",
+    "small business digital tools",
+  ],
+  authors: [{ name: "Kervens Auguste" }],
+  openGraph: {
+    title: "Kervens Auguste — Full Stack Web Developer",
+    description:
+      "A calm, trustworthy, and human introduction to Kervens Auguste, focused on clear communication and dependable digital products.",
+    url: "https://kervens-auguste.com",
+    locale: "en_US",
+    type: "website",
+  },
 }
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+    <html lang="en">
+      <body className={`${inter.className} ${inter.variable}`}>
+        <SiteLayout>{children}</SiteLayout>
       </body>
     </html>
   )

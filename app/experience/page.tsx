@@ -8,24 +8,22 @@ export default function ExperiencePage() {
         <article className={styles.entry}>
           <header>
             <h2>Kaleida Health</h2>
-            <p className={styles.role}>Product-minded Full Stack Developer</p>
+            <p className={styles.role}>Full Stack Web Developer | Product-Minded Problem Solver
+</p>
           </header>
           <p>
-            Led the modernization of internal healthcare applications, translating legacy workflows into intuitive
-            interfaces that reduce friction for clinicians and staff. Drove cross-team alignment by documenting user
-            journeys, prototyping ideas quickly, and delivering dependable releases.
+            Architected and modernized a suite of internal healthcare applications that support daily operations across multiple hospitals and departments. Translated complex legacy systems into clean, accessible web experiences that reduce friction for clinicians and administrative teams. Collaborated with leadership to identify workflow pain points, prototype improvements, and deploy stable releases that have become core to the organization’s digital infrastructure.
           </p>
         </article>
 
         <article className={styles.entry}>
           <header>
-            <h2>Independent Work</h2>
+            <h2>Freelance Work</h2>
             <p className={styles.role}>Partner to small teams & growing businesses</p>
           </header>
           <p>
-            Helped founders and community organizations clarify their ideas, build proof-of-concepts, and ship polished
-            digital tools. I step in where teams need steadiness—bringing structure, thoughtful communication, and an eye
-            for detail.
+            Collaborate with founders, nonprofits, and local businesses to shape ideas into functional, reliable digital tools. I bring structure and strategy to projects that start as sketches — guiding discovery, designing approachable user flows, and delivering scalable solutions built to last. My focus is always the same: build software that feels natural, performs consistently, and leaves teams feeling confident using it.
+
           </p>
         </article>
       </div>

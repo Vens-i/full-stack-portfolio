@@ -1,31 +1,33 @@
-import { ThemeToggle } from "@/components/theme-toggle"
-import { FloatingSidebar } from "@/components/floating-sidebar"
-import { Hero } from "@/components/hero"
-import { Projects } from "@/components/projects"
-import { Skills } from "@/components/skills"
-import { Experience } from "@/components/experience"
-import { Contact } from "@/components/contact"
-import { Footer } from "@/components/footer"
-import { Services } from "@/components/services"
+import Link from "next/link"
 
-export default function Home() {
+import styles from "./page.module.css"
+
+export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
-      <FloatingSidebar />
-      <main className="container relative mx-auto px-4 py-8 md:px-8 lg:px-16">
-        <div className="absolute right-4 top-4 z-50 md:right-8 lg:right-16">
-          <ThemeToggle />
-        </div>
-        <div className="grid grid-cols-1 gap-12 pb-16 pt-16 md:gap-16 lg:gap-24">
-          <Hero />
-          <Services />
-          <Projects />
-          <Skills />
-          <Experience />
-          <Contact />
-        </div>
-      </main>
-      <Footer />
-    </div>
+    <section className={styles.hero}>
+      <p className={styles.eyebrow}>Kervens Auguste — Full Stack Web Developer</p>
+      <h1 className={styles.title}>I help teams bring calm, trustworthy software to life.</h1>
+      <p className={styles.lead}>
+        I work alongside healthcare teams and small businesses to shape digital tools that feel dependable, human, and
+        easy to understand. My focus is on clarity, thoughtful collaboration, and steady iteration.
+      </p>
+      <div className={styles.actions}>
+        <Link href="/contact" className={styles.primaryButton}>
+          Let&apos;s Connect
+        </Link>
+        <Link href="/about" className={styles.secondaryLink}>
+          Learn more about me
+        </Link>
+      </div>
+
+      <div className={styles.detailsCard}>
+        <h2 className={styles.detailsTitle}>What working together feels like</h2>
+        <p>
+          I listen closely, translate ideas into clear plans, and build interfaces that invite people in. Whether we are
+          modernizing internal tools or exploring a new product, I keep the process steady, transparent, and grounded in
+          real needs.
+        </p>
+      </div>
+    </section>
   )
 }
